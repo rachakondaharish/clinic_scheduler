@@ -3,7 +3,14 @@ package com.cvs.vaccine.clinic.scheduler.clinic_schedule.entities;
 import java.sql.Time;
 import java.util.Date;
 
+//@Table
+//@Entity
 public class ClientRequestEntity {
+	
+//	@Id
+//	@GeneratedValue
+	private Long id;
+	
 	public String clinic_name;
 	public String contact_full_name;
 	public long phone_number_1;
@@ -23,6 +30,13 @@ public class ClientRequestEntity {
 	public String use_a_voucher;
 	
 	
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getClinic_name() {
 		return clinic_name;
 	}
