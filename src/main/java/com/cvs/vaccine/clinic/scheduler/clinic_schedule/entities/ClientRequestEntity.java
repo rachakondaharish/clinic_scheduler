@@ -20,7 +20,7 @@ public class ClientRequestEntity {
 	public Time end_time;
 	public int participants_between_ages_4_64;
 	public int participants_aged_65_and_up;
-	public String use_a_voucher;
+	public String hhhse_a_voucher;
 	
 	
 	
