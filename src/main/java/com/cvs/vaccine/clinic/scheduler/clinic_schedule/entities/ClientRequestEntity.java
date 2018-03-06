@@ -3,14 +3,22 @@ package com.cvs.vaccine.clinic.scheduler.clinic_schedule.entities;
 import java.sql.Time;
 import java.util.Date;
 
-//@Table
-//@Entity
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table
+@Entity(name = "Harish_temp")
 public class ClientRequestEntity {
 	
-//	@Id
-//	@GeneratedValue
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
 	private Long id;
-	
+	@Column(name="ClinicName")
 	public String clinic_name;
 	public String contact_full_name;
 	public long phone_number_1;
@@ -28,6 +36,7 @@ public class ClientRequestEntity {
 	public int participants_between_ages_4_64;
 	public int participants_aged_65_and_up;
 	public String use_a_voucher;
+	public String userType;
 	
 	
 	
@@ -138,6 +147,12 @@ public class ClientRequestEntity {
 	}
 	public void setUse_a_voucher(String use_a_voucher) {
 		this.use_a_voucher = use_a_voucher;
+	}
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 	
