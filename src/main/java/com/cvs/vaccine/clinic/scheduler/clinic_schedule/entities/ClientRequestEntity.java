@@ -6,18 +6,23 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import com.cvs.vaccine.clinic.scheduler.clinic_schedule.auditing.Auditable;
+
+
 @Table
 @Entity(name = "Harish_temp")
-public class ClientRequestEntity {
+public class ClientRequestEntity  extends Auditable<String> {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GenericGenerator(name="seq_id", strategy="com.cvs.vaccine.clinic.scheduler.clinic_schedule.entities.StockCodeGenerator")
+	@GeneratedValue(generator="seq_id")
 	@Column
-	private Long id;
+	private String id;
 	@Column(name="ClinicName")
 	public String clinic_name;
 	public String contact_full_name;
@@ -40,10 +45,10 @@ public class ClientRequestEntity {
 	
 	
 	
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getClinic_name() {

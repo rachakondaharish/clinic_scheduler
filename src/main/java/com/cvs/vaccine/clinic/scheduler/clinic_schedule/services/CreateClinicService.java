@@ -19,6 +19,10 @@ public class CreateClinicService {
 	
 	public void saveClinic(CreateClinicRequestVO createClinicRequestVO){
 		EmployerDetailsEntity employerDetailsEntity = employerDetailsRepository.findOneByuserId(createClinicRequestVO.getUserId());	
+		if(employerDetailsEntity==null){
+			employerDetailsEntity = new EmployerDetailsEntity();
+			employerDetailsEntity.setUserType("Emp");
+		}
 		
 		ClientRequestEntity clientRequestEntity = new ClientRequestEntity();
 		clientRequestEntity.setUserType(employerDetailsEntity.getUserType());

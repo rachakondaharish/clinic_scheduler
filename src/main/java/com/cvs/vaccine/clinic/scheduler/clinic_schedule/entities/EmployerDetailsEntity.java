@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import com.cvs.vaccine.clinic.scheduler.clinic_schedule.auditing.Auditable;
+
 
 @Table
 @Entity(name = "Harish_temp2")
